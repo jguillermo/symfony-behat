@@ -16,7 +16,7 @@ class HealthCheckController
     public function index()
     {
         return new JsonResponse([
-            'status'=>'ok'
+            'status' => 'ok'
         ]);
     }
 
@@ -26,6 +26,30 @@ class HealthCheckController
     public function ok()
     {
         return new Response("");
+    }
+
+    /**
+     * @Route("/register-error", methods={"POST"})
+     */
+    public function registerError()
+    {
+        return new JsonResponse([
+            'status' => 'error',
+            'message' => 'lastName: This value should not be blank.'
+        ],400);
+    }
+
+    /**
+     * @Route("/register-ok", methods={"POST"})
+     */
+    public function registerOk()
+    {
+        return new JsonResponse([
+            'status' => 'ok',
+            'id' => '987654321',
+            'name' => 'jhon',
+            'token' => 'ksdjjdb',
+        ],201);
     }
 
 }

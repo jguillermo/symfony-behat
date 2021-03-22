@@ -7,7 +7,34 @@ Feature:
     As a user
     I want to have a demo scenario
 
-    Scenario: It receives a response from Symfony's kernel
+    Scenario: Call a not found route
         When I add "Content-Type" header equal to "application/json"
         And I send a "GET" request to "/not-fount-page"
         Then the response status code should be 404
+
+    Scenario: Try to register a user with missing "lastName" field
+        When I add "Content-Type" header equal to "application/json"
+        And I send a "POST" request to "/register-error" with body:
+        """
+        {
+            "firstName": "jhon"
+        }
+        """
+        Then the response status code should be 400
+        And the response should be in JSON
+        And the JSON node "message" should be equal to the string "lastName: This value should not be blank."
+
+    Scenario: Successfully register a new user
+        When I add "Content-Type" header equal to "application/json"
+        And I send a "POST" request to "/register-ok" with body:
+        """
+        {
+            "firstName": "jhon",
+            "lastName": "doe"
+        }
+        """
+        Then the response status code should be 201
+        And the response should be in JSON
+        And the JSON node "id" should not be null
+        And the JSON node "name" should be equal to the string "jhon"
+        And the JSON node "token" should not be null
