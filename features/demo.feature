@@ -8,5 +8,6 @@ Feature:
     I want to have a demo scenario
 
     Scenario: It receives a response from Symfony's kernel
-        When a demo scenario sends a request to "/ok"
-        Then the response should be received
+        When I add "Content-Type" header equal to "application/json"
+        And I send a "GET" request to "/not-fount-page"
+        Then the response status code should be 404

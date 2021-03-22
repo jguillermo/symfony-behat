@@ -5,8 +5,14 @@
     "behat/gherkin": {
         "version": "v4.8.0"
     },
+    "behat/mink": {
+        "version": "v1.8.1"
+    },
     "behat/transliterator": {
         "version": "v1.3.0"
+    },
+    "behatch/contexts": {
+        "version": "3.3.0"
     },
     "composer/package-versions-deprecated": {
         "version": "1.11.99.1"
@@ -26,6 +32,12 @@
     "doctrine/lexer": {
         "version": "1.2.1"
     },
+    "friends-of-behat/mink-browserkit-driver": {
+        "version": "v1.5.0"
+    },
+    "friends-of-behat/mink-extension": {
+        "version": "v2.5.0"
+    },
     "friends-of-behat/symfony-extension": {
         "version": "2.0",
         "recipe": {
@@ -43,6 +55,9 @@
     },
     "friendsofphp/proxy-manager-lts": {
         "version": "v1.0.3"
+    },
+    "justinrainbow/json-schema": {
+        "version": "5.2.10"
     },
     "laminas/laminas-code": {
         "version": "4.0.0"
@@ -77,6 +92,9 @@
             "config/packages/sensio_framework_extra.yaml"
         ]
     },
+    "symfony/browser-kit": {
+        "version": "v5.2.4"
+    },
     "symfony/cache": {
         "version": "v5.2.4"
     },
@@ -98,11 +116,17 @@
             "bin/console"
         ]
     },
+    "symfony/css-selector": {
+        "version": "v5.2.4"
+    },
     "symfony/dependency-injection": {
         "version": "v5.2.5"
     },
     "symfony/deprecation-contracts": {
         "version": "v2.2.0"
+    },
+    "symfony/dom-crawler": {
+        "version": "v5.2.4"
     },
     "symfony/dotenv": {
         "version": "v5.2.4"
@@ -177,6 +201,12 @@
     },
     "symfony/polyfill-php80": {
         "version": "v1.22.1"
+    },
+    "symfony/property-access": {
+        "version": "v5.2.4"
+    },
+    "symfony/property-info": {
+        "version": "v5.2.4"
     },
     "symfony/proxy-manager-bridge": {
         "version": "v5.2.4"
