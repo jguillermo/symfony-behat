@@ -11,13 +11,21 @@ use Symfony\Component\Routing\Annotation\Route;
 class HealthCheckController
 {
     /**
-     * @Route("/health-check", methods={"GET"})
+     * @Route("/health-check-json", methods={"GET"})
      */
-    public function index()
+    public function healthCheckJson()
     {
         return new JsonResponse([
             'status' => 'ok'
         ]);
+    }
+
+    /**
+     * @Route("/health-check-html", methods={"GET"})
+     */
+    public function healthCheckHtml()
+    {
+        return new Response("ok");
     }
 
     /**
